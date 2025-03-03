@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+const int Class = 3;
+const int Student = 10;
+
+int main()
+{
+    int ID[Class][Student];
+    char Name[Class][Student][30];
+    char Surname[Class][Student][30];
+
+    for (int i = 0; i < Class; ++i)
+    {
+        for (int j = 0; j < Student; ++j)
+        {
+            printf("Class %d, Student %d ID: ", i + 1, j + 1);
+            scanf("%d", &ID[i][j]);
+
+            printf("Class %d, Student %d Name: ", i + 1, j + 1);
+            scanf("%s", Name[i][j]);
+
+            printf("Class %d, Student %d Surname: ", i + 1, j + 1);
+            scanf("%s", Surname[i][j]);
+        }
+    }
+
+    printf("\nDisplaying values: \n\n");
+
+    for (int i = 0; i < Class; ++i)
+    {
+        for (int j = 0; j < Student; ++j)
+        {
+            printf("Classroom %d, Number %d = %d  %-10s  %-10s\n", i + 1, j + 1, ID[i][j],Name[i][j],Surname[i][j]);
+        }
+    }
+
+    return 0;
+}
