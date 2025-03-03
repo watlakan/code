@@ -1,0 +1,1 @@
+ printf("Classroom %d, Number %d = %d  %-10s  %-10s\n", i + 1, j + 1, ID[i][j],Name[i][j],Surname[i][j]);
