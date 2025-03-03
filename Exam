@@ -1,0 +1,66 @@
+#include <stdio.h>
+int main() {
+    int n,mid,final,work,grade;
+	float sum,avg,avg1; 
+    printf("Input Student Num: ");
+    scanf("%d", &n);
+    char firstNames[n][50]; 
+    char lastNames[n][50];  
+    float heights[n];       
+    float weights[n];
+    float gpas[n];
+	for (int i = 0; i < n; i++) {
+    	sum = 0;
+        printf("\nNuber %d\n", i + 1);
+
+        printf("Name: ");
+        scanf("%s", firstNames[i]);
+
+        printf("Surname: ");
+        scanf("%s", lastNames[i]);
+
+        printf("Height (cm): ");
+        scanf("%f", &heights[i]);
+
+        printf("Weight (kg): ");
+        scanf("%f", &weights[i]);
+        
+        for(int j=0;j<5;j++){
+		printf("Subject : %d",j+1);
+		printf("\nMidterm Score: ");
+        scanf("%d", &mid);
+               
+        printf("Final Score: ");
+        scanf("%d", &final);
+        
+        printf("Assignment Score: ");
+        scanf("%d", &work);
+        
+        sum = mid+final+work;
+    if(sum >= 80){		
+        grade=4;
+      }else if(sum >= 70){
+      	grade=3;
+	  }else if(sum >= 60){
+	  	grade=2;
+	  }else if(sum >= 50){
+	  	grade=1;
+	  }else{
+	  	grade=0;
+	  }
+	  avg = avg+grade;	  
+    }
+      avg1 = avg/5;
+      printf("\nAVG = %.2f",avg1);
+      gpas[i]=avg1;
+	}
+
+    printf("\n===== Student Information =====\n");
+    printf("%-15s %-15s %-10s %-10s %-10s\n", "Name", "Surname", "Height", "Weight", "Grade");
+    printf("-------------------------------------------------------\n");
+    
+    for (int i = 0; i < n; i++) {
+        printf("%-15s %-15s %-10.2f %-10.2f %-10.2f\n", firstNames[i], lastNames[i], heights[i], weights[i], gpas[i]);
+    }
+
+    return 0;
